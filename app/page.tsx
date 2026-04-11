@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useRef, useState, useMemo, useCallback } from 'react';
 import { Canvas, useFrame, ThreeEvent } from '@react-three/fiber';
 import * as THREE from 'three';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -175,7 +175,6 @@ export default function HomePage() {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     setCurrentQuote(randomQuote);
     setShowQuote(true);
-
     setTimeout(() => setShowQuote(false), 4500);
   }, []);
 
@@ -191,7 +190,6 @@ export default function HomePage() {
         <StarField onStarClick={handleStarClick} />
       </Canvas>
 
-      {/* Заголовок */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10 pointer-events-none">
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
@@ -203,7 +201,6 @@ export default function HomePage() {
         <p className="text-white/70 text-xl md:text-2xl tracking-widest">космос нашей любви</p>
       </div>
 
-      {/* Цитата */}
       <AnimatePresence>
         {showQuote && currentQuote && (
           <motion.div
